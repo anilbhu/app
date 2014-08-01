@@ -1,0 +1,44 @@
+require 'csv'
+ namespace :create2 do
+  desc "create remainingcompany table"
+  task :create_newtable2 => :environment do
+    cfile = "db/companies.csv"
+    ffile = "db/filtered.csv"
+     puts "************ creating attribution *******"
+     @x,i=0,j=0,f=0
+     y=[]
+      CSV.foreach(ffile, :headers => true) do |row|
+     y[j]=row[0]
+     j=j+1
+   end
+   y.sort
+     CSV.foreach(cfile, :headers => true) do |row|
+        f=Binarysearch(y,row[1])
+        if (f==0)
+       #RemaningCompany.create!(
+         # companyname: @x,
+         # companywebsite: row[5],
+          logolink: nil 
+        #)
+    end
+  end
+ end
+end
+def BinarySearch(arr,value)
+ low = 0
+      high = N - 1
+      while (low <= high) 
+          
+          mid = (low + high) / 2
+          if (A[mid] > value)
+              high = mid - 1
+          else if (A[mid] < value)
+              low = mid + 1
+          else
+              return 1
+     end
+      end
+      return 0
+ 
+end
+
