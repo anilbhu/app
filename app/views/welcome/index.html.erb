@@ -1,2 +1,76 @@
-<h1>Welcome#index</h1>
-<p>Find me in app/views/welcome/index.html.erb</p>
+<html>
+<head>
+
+<script type="text/javascript">
+function validate()
+{
+	if(document.form.link=="")
+	{
+		alert("Please fill form");
+		return false;
+	}
+return false;
+}
+
+function a(param)
+{
+	var cntr = parseInt(param);
+	document.getElementById(cntr).style.display='none';
+	cntr=cntr+1;
+	document.getElementById(cntr).style.display='block';
+	return true;
+}	
+</script>
+</head>
+<body>
+<center style="font-size:500%">
+	<div id="0">
+	<p style="display:block">Welcome to our Company</p>
+	<input id="0" style="display:block" type="button" value="Next" onclick=a(id)>
+	</div>
+</center>
+<%
+ @x ||= Array.new
+ @y ||= Array.new
+ @i=0
+ @x.each do |data| 
+ @x[@i] = data.companyname
+ @y[@i] = data.companywebsite
+ @i=@i+1 %>
+<center>
+	<form name="form">
+	<div id="<%= @i %>" style="display:none">
+		<fieldset>
+	    	<legend>Company Details:</legend>
+			<p>Company name: <%= @x[@i-1] %></p>
+			<p>Link :<a href="http://<%= @y[@i-1] %>" target="_blank"><%= @y[@i-1] %></a></p>
+			<p><input id="<%= @i %>" type="button" value="Next" onclick=a(id)></p>
+			<p>Logo Link: <input type="text" name="link"></br></p>
+			<p><input type="button" onclick=validate() value="Submit"></p>
+		</fieldset>
+	</div>
+	</form>
+</center>
+ <% end %>
+<% if false %>
+ <h1>add new post</h1>
+ <%=form_for @company do |f| %>
+ <p>
+ <br><%=f.text_field :title %></br>
+ <br><%=f.text_field :title %></br>
+ <br><%=f.text_field :title %></br>
+ </p>
+ <p>
+ <br><%=f.text_field :content %></br>
+ <br><a><%=f.text_field :content %></br>
+<br><a><%=f.text_field :content %></br></a>
+ </p>
+ <p>
+ <%=f.submit "click to add new post" %>
+ </p>
+ <% end %>
+<% end %>
+</body>
+</html>
+  
+
