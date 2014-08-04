@@ -1,0 +1,29 @@
+
+
+<form accept-charset="UTF-8" action="@company" method="post">
+  <p>Companyname: <%= @company.companyname %> </p>
+  <p>Link :<a href="http://<%= @company.companywebsite %>" target="_blank"><%= @company.companywebsite %></a></p>
+</form>
+   <form name="input" action="/next1" method="get">
+<input type=hidden name="logo_link"/>
+<input type=hidden name="companyname" value=<%= @company.companyname %> />
+<input type=hidden name="website" value=<%= @company.companywebsite %> />
+<input type=hidden name="id" value=<%= @company.id %> />
+<input type="submit" value="Next">
+</form>
+<form name="input" action="/back" method="get">
+<input type=hidden name="logo_link"/>
+<input type=hidden name="companyname" value=<%= @company.companyname %> />
+<input type=hidden name="website" value=<%= @company.companywebsite %> />
+<input type=hidden name="id" value=<%= @company.id %> />
+<input type="submit" value="Back">
+</form>
+<form name="input" action="/submit" method="get">
+<input type=text name="logo_link"/>
+<input type=hidden name="companyname" value=<%= @company.companyname %> />
+<input type=hidden name="website" value=<%= @company.companywebsite %> />
+<input type=hidden name="id" value=<%= @company.id %> />
+<input type="submit" value="Submit">
+</form>
+
+

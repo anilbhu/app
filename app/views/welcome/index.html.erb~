@@ -52,24 +52,6 @@ function a(param)
 	</form>
 </center>
  <% end %>
-<% if false %>
- <h1>add new post</h1>
- <%=form_for @company do |f| %>
- <p>
- <br><%=f.text_field :title %></br>
- <br><%=f.text_field :title %></br>
- <br><%=f.text_field :title %></br>
- </p>
- <p>
- <br><%=f.text_field :content %></br>
- <br><a><%=f.text_field :content %></br>
-<br><a><%=f.text_field :content %></br></a>
- </p>
- <p>
- <%=f.submit "click to add new post" %>
- </p>
- <% end %>
-<% end %>
 </body>
 </html>
   

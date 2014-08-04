@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
   get 'welcome/index'
+  get 'welcome/new'
+  get 'hello' => 'welcome#hello'
+  get 'submit' => 'welcome#submit'
+  get 'next1'   => 'welcome#next1'
+  get 'back'   => 'welcome#back'
   #resources: welcome
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
