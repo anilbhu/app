@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   get 'submit' => 'welcome#submit'
   get 'next1'   => 'welcome#next1'
   get 'back'   => 'welcome#back'
+  get 'image'  => 'welcome#image'
+
   #resources: welcome
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

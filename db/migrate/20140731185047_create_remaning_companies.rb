@@ -1,6 +1,6 @@
 class CreateRemaningCompanies < ActiveRecord::Migration
   def change
-    create_table :remaning_companies do |t|
+      create_table :remaning_companies do |t|
       t.string :companyname
       t.string :companywebsite
       t.string :logolink
